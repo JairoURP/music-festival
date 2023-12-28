@@ -1,0 +1,65 @@
+//imv prefijo para colocar el cuerpo de la variable
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+  background-color: v.$green;
+
+  @include m.tablet {
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0.1rem 0.2rem 0.3rem rgba(v.$black, 0.3);
+    }
+  }
+
+  //Se especifica en scss para que se seleccione
+  h1 {
+    color: v.$white;
+    text-align: center;
+
+    //Que se active cuando el mixin cuando sea una tablet
+    @include m.tablet {
+      //Se le quita el margen
+      margin: 0;
+    }
+  }
+
+  .content-header {
+    padding: 2rem;
+
+    //Cuando el tamaño de la pantalla sea más grande que una tablet
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.navigation-main {
+  @include m.tablet {
+    display: flex;
+    gap: 2rem;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    color: v.$white;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+
+    @include m.tablet {
+      margin: 0;
+    }
+
+    //A la clase a se le concatena (no genera especios como el punto), la función hover, que cada vez que pase el mouse se active
+    &:hover {
+      color: v.$yellow;
+    }
+  }
+}

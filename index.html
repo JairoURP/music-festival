@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock & EDM Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
+    <script src="build/js/app.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container content-header">
+            <h1>Rock & EDM Festival</h1>
+            <nav class="navigation-main">
+                <a href="#lineup">Line Up</a>
+                <a href="#gallery">Galería</a>
+                <a href="#tickets">Boletos</a>
+            </nav>
+        </div>
+    </header>
+    <!-- autoplay funciona en localhost, pero no cuando esté desplegado
+    por eso tenemos que agregarle muted, pues es un requisito de los navegadores -->
+    <!-- el atributo controls es para mostrar los controles del video -->
+    <div class="video">
+        <div class="overlay">
+            <div class="container content-video">
+                <h2>Rock & EDM Festival</h2>
+                <p>Noviembre 2023, Lima, Perú.</p>
+            </div>
+        </div>
+        <!-- Que salga uno de los videos mencionados, para indicarle que se reproduzca automáticamente se le pone el atributo autoplay (Funciona bien en el localhost, pero no cuando la aplicación desplegada), por eso tenemos que agregarle muted, pues un requisito para los navegadores, loop hace que se ejecute infinitamente. Por otro lado si desea que se muestren los controles, se agrega el atributo controls-->
+        <video autoplay muted loop>
+            <source src="video/concierto.mp4" type="video/mp4">
+            <source src="video/concierto.ogg" type="video/ogg">
+            <source src="video/concierto.webm" type="video/webm">
+        </video>
+    </div>
+
+    <section class="container about-festival">
+        <!-- Indicando que es una imagen -->
+        <div class="image">
+            <!-- <img src="img/imagen_vocalista.jpg" alt="Imagen Vocalista Festival"> -->
+            <picture>
+                <!-- Se coloca primero el formato avif, pues, es la más liviana -->
+                <source srcset="build/img/imagen_vocalista.avif" type="image/avif">
+                <!-- Si no se puede cargar la imagen webp, que es a su vez más ligera que la original -->
+                <source srcset="build/img/imagen_vocalista.webp" type="image/webp">
+                <!-- Por último, no se cargan las dos imagenes anteriores se carga la imagen original, que se ejecute de manera perezoza, esto indica que se hará cuando el browser esté cargando, se adecuará a la velocidad de este, si se agrega un width y un height, es un tip para que la carga de html se realice más rápido, la prioridad aumenta -->
+                <img loading="lazy" width="200" height="300" src="build/img/imagen_vocalista.jpg"
+                    alt="Imagen Vocalista Festival">
+            </picture>
+
+        </div>
+        <div class="content-festival">
+            <h2>Rock & EDM Festival</h2>
+            <p class="date">Noviembre 2023, Lima, Perú.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid est modi nisi porro excepturi
+                temporibus, magni laudantium, nemo eius fugiat saepe at eveniet libero impedit totam minima perspiciatis
+                natus quaerat?</p>
+        </div>
+    </section>
+
+    <section id="lineup" class="lineup">
+        <h3>Line Up</h3>
+        <p class="day">Viernes 21</p>
+        <div class="scenarios-container container">
+            <div class="scenery rock bg-yellow">
+                <p class="name-scenery">Escenario Rock</p>
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Metallica</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Pearl Jam</span>
+                    </li>
+                    <li>
+                        20:00 | <span>KoRn</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Muse</span>
+                    </li>
+                    <li>
+                        18:00 | <span>Breaking Benjamin</span>
+                    </li>
+                    <li>
+                        17:00 | <span>30 Seconds to Mars</span>
+                    </li>
+                </ul>
+            </div> <!-- .scenery -->
+
+            <div class="scenery edm bg-green">
+                <p class="name-scenery">Escenario EDM</p>
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Deadmau5</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Tïesto</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Hardwell</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Dash Berlin</span>
+                    </li>
+
+                    <li>
+                        18:00 | <span>Fedde Legrand</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Audien</span>
+                    </li>
+                </ul>
+            </div> <!-- .scenery -->
+        </div> <!-- .scenery-container -->
+
+        <p class="day">Sábado 22</p>
+        <div class="scenarios-container container">
+            <div class="scenery rock bg-green">
+                <p class="name-scenery">Escenario Rock</p>
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Red Hot Chili Peppers</span>
+                    </li>
+                    <li>
+                        22:00 | <span>The Killers</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Deftones</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Limp Bizkit</span>
+                    </li>
+
+                    <li>
+                        18:00 | <span>Papa Roach</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Lamb of God</span>
+                    </li>
+                </ul>
+            </div> <!-- .scenery -->
+
+            <div class="scenery edm bg-yellow">
+                <p class="name-scenery">Escenario EDM</p>
+                <ul class="calendar">
+                    <li>
+                        24:00 | <span>Paul Van Dyk</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Armin Van Buuren</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Above & Beyond</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Eric Prdyz</span>
+                    </li>
+
+                    <li>
+                        18:00 | <span>Ferry Corsten</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Vini Vici</span>
+                    </li>
+                </ul>
+            </div> <!-- .scenery -->
+        </div> <!-- .scenery-container -->
+    </section>
+
+    <section id="gallery" class="gallery container">
+        <h3>Galería</h3>
+        <ul class="gallery-images"></ul>
+    </section>
+
+    <section id="tickets" class="tickets bg-green">
+        <h3>Boletos</h3>
+        <div class="container container-tickets">
+            <div class="basic pass">
+                <p class="pass-name">Pase 1 Día</p>
+                <header class="pass-header">
+                    <p>Incluye</p>
+                </header>
+                <div class="pass-body">
+                    <ul>
+                        <li>Acceso a ambos escenarios</li>
+                        <li>Comida y Bebida</li>
+                    </ul>
+                </div>
+                <footer class="pass-footer">
+                    <p>$100</p>
+                </footer>
+            </div>
+            <div class="premium pass">
+                <p class="pass-name">Pase 2 Día</p>
+                <header class="pass-header">
+                    <p>Incluye</p>
+                </header>
+                <div class="pass-body">
+                    <ul>
+                        <li>Acceso a ambos escenarios</li>
+                        <li>Comida y Bebida</li>
+                        <li>Camisa del Evento</li>
+                        <li>Acceso VIP</li>
+                    </ul>
+                </div>
+                <footer class="pass-footer">
+                    <p>$180</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Rock & EDM Festival. Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>
