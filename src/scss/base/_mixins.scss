@@ -61,6 +61,7 @@
   gap: $gap;
 }
 
+//Que la lista no tenga un formato específico
 @mixin reset-list {
   margin: 0;
   padding: 0;
