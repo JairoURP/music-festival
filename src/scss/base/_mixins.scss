@@ -61,7 +61,7 @@
   gap: $gap;
 }
 
-//Que la lista no tenga un formato específico
+//Que la lista no tenga un formato específico, se elimina el estilo de la lista, se le quitan los puntos, el márgen
 @mixin reset-list {
   margin: 0;
   padding: 0;

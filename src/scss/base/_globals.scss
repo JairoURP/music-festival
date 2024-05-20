@@ -19,6 +19,7 @@ body {
   font-family: v.$mainFont;
   font-size: 1.6rem;
 
+  //Se crea una clase para aquellos datos que no quieran realizar el scroll
   &.no-scroll {
     overflow: hidden;
   }

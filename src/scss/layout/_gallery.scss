@@ -1,5 +1,5 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+@use "base/variables" as v;
+@use "base/mixins" as m;
 
 .gallery {
   padding: 5rem 0;
@@ -9,32 +9,40 @@
 }
 
 .gallery-images {
+  //Se agrega el mixin para quitarle los estilos adicionales a nuestras imágenes
   @include m.reset-list;
+  //Por default que sea una grilla de 2 filas y que tenga un espacio de dos rem
   @include m.grid(2, 2rem);
+  //Al ser un celular
   @include m.phone {
     @include m.grid(3, 2rem);
   }
+  //Si es más grande como una tablet
   @include m.tablet {
     @include m.grid(4, 2rem);
   }
+  //Si es una desktop o más grande
   @include m.desktop {
     @include m.grid(6, 2rem);
   }
 }
 
 .overlay {
+  //Que se sobreponga
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 
+  //Que tenga el formato de grilla, con una sola cuadrícula
   display: grid;
   place-items: center;
 
-  background-color: rgb(0 0 0 / .5);
+  //Se agrega un color de fondo negro
+  background-color: rgb(0 0 0/ 0.5);
 
   picture {
     display: block;
@@ -42,15 +50,27 @@
 }
 
 .btn-close {
+  //Ancho y largo
   width: 5rem;
   height: 5rem;
+
+  //Que tenga un border circular
   border-radius: 50%;
+
+  //Que tenga un color de fondo blanco
   background-color: v.$white;
+
+  //Que sea de color negro el texto
   color: v.$black;
-  display: grid;
-  place-items: center;
+
+  //Que esté en negrita la X
   font-weight: 700;
 
+  //Se centra
+  display: grid;
+  place-items: center;
+
+  //Que al pasar por encima sale el puntero
   &:hover {
     cursor: pointer;
   }
